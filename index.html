@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부산대학교 SW중심대학 2026 브로슈어</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pnu-blue: #003a7a;
+            --pnu-gold: #b2945e;
+            --light-gray: #f4f7fa;
+            --text-dark: #333;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin: 0;
+            background-color: var(--light-gray);
+        }
+
+        /* 헤더 디자인 */
+        header {
+            background: linear-gradient(135deg, var(--pnu-blue) 0%, #002244 100%);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 { margin: 0; font-size: 2.2rem; letter-spacing: -1px; }
+        header p { margin-top: 10px; opacity: 0.9; font-weight: 300; }
+
+        /* 탭 메뉴 스타일 */
+        .tab-container {
+            max-width: 1100px;
+            margin: -30px auto 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .tab-menu {
+            display: flex;
+            flex-wrap: wrap;
+            background: #eee;
+            border-bottom: 2px solid var(--pnu-blue);
+        }
+
+        .tab-link {
+            flex: 1;
+            padding: 15px 10px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background: #eee;
+            font-weight: bold;
+            transition: 0.3s;
+            font-size: 0.9rem;
+            min-width: 140px;
+        }
+
+        .tab-link:hover { background: #e0e0e0; }
+        .tab-link.active {
+            background: var(--pnu-blue);
+            color: white;
+        }
+
+        /* 콘텐츠 영역 */
+        .tab-content {
+            display: none;
+            padding: 40px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tab-content.active { display: block; }
+
+        /* 본문 스타일링 */
+        h2 { color: var(--pnu-blue); border-left: 5px solid var(--pnu-gold); padding-left: 15px; margin-top: 30px; }
+        h3 { color: #555; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .card h4 { margin-top: 0; color: var(--pnu-blue); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table th { background-color: var(--pnu-blue); color: white; }
+        table tr:nth-child(even) { background-color: #f9f9f9; }
+
+        .highlight { color: var(--pnu-blue); font-weight: bold; }
+        
+        /* 모바일 대응 */
+        @media (max-width: 768px) {
+            .tab-menu { flex-direction: column; }
+            .tab-link { width: 100%; text-align: left; border-bottom: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>부산대학교 SW중심대학 2026</h1>
+    <p>AI융합교육원 | 진정한 AI·SW 가치확산을 실현하는 혁신 플랫폼</p>
+</header>
+
+<div class="tab-container">
+    <div class="tab-menu">
+        <button class="tab-link active" onclick="openTab(event, 'tab1')">1. 교육목표 및 혁신</button>
+        <button class="tab-link" onclick="openTab(event, 'tab2')">2. 자율적 교육혁신</button>
+        <button class="tab-link" onclick="openTab(event, 'tab3')">3. 환경 및 모니터링</button>
+        <button class="tab-link" onclick="openTab(event, 'tab4')">4. SW 전공교육 강화</button>
+        <button class="tab-link" onclick="openTab(event, 'tab5')">5. AI·SW 융합교육</button>
+        <button class="tab-link" onclick="openTab(event, 'tab6')">6. 성과확산 및 창업</button>
+        <button class="tab-link" onclick="openTab(event, 'tab7')">7. 대학 일반 현황</button>
+    </div>
+
+    <div id="tab1" class="tab-content active">
+        <h2>동남권 디지털 대전환을 이끄는 SMART 인재 양성</h2>
+        <p>부산대학교는 SW중심으로 대학 교육체계를 혁신하여 학생, 기업, 사회의 경쟁력을 강화합니다.</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <h4>STEP 1: 기반 재정비</h4>
+                <p>신기술 수요 반영 교육체계 재정비 및 AI융합교육원 설립 운영</p>
+            </div>
+            <div class="card">
+                <h4>STEP 2: 성과 내실화</h4>
+                <p>SMART-PNU 교육모델 안착 및 산학협력 활성화 (2025~2026)</p>
+            </div>
+            <div class="card">
+                <h4>STEP 3: 성과 공유</h4>
+                <p>AI·SW 가치 확산 및 지역 혁신 네트워크 구축 (2027~2028)</p>
+            </div>
+        </div>
+        
+        <h3>4C 추진 전략</h3>
+        <ul>
+            <li><strong>Customized:</strong> 맞춤형 교육혁신 (신기술 반영)</li>
+            <li><strong>Convergence:</strong> 미래지향적 융합 연구</li>
+            <li><strong>Cooperative:</strong> 산학 협력 네트워크 강화</li>
+            <li><strong>Connected:</strong> 지역거점 가치 확산</li>
+        </ul>
+    </div>
+
+    <div id="tab2" class="tab-content">
+        <h2>학사 조직 및 제도 혁신</h2>
+        <p>대학 중장기 발전계획에 따라 AI·SW를 대표 특성화 분야로 지정하고 정원을 대폭 증원하였습니다.</p>
+        
+        <table>
+            <tr>
+                <th>구분</th>
+                <th>상세 내용</th>
+            </tr>
+            <tr>
+                <td>전국 최초 공동학과</td>
+                <td>부산대-경북대 인공지능 공동학과 신설 (총 128명)</td>
+            </tr>
+            <tr>
+                <td>전공 학과 증원</td>
+                <td>SW학과 정원 43.3% 증원 (134명 → 192명)</td>
+            </tr>
+            <tr>
+                <td>교육 인프라</td>
+                <td>IT관(25.10 준공), 경암공학관(23.10 준공) 신축</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="tab3" class="tab-content">
+        <h2>PNU-ICEx 통합 교육 시스템</h2>
+        <p>코딩 역량 개발과 관리를 위한 온라인 AI·SW 교육/실습 환경을 운영합니다.</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <h4>코딩 역량 관리 (CCM)</h4>
+                <p>코딩 스타일 및 품질 분석, PNU코딩인증제 연계</p>
+            </div>
+            <div class="card">
+                <h4>자동 채점 시스템 (OJ)</h4>
+                <p>문제은행 자동 채점 및 표절 방지 시스템</p>
+            </div>
+            <div class="card">
+                <h4>클라우드 환경</h4>
+                <p>PNU DevCloud를 통한 산업 현장 중심 실습</p>
+            </div>
+        </div>
+
+        <h3>성과 환류 체계 (PDCA)</h3>
+        <p>학년별 코딩 역량 수준을 설정하고, 미통과자 멘토링 및 교육과정 개선을 통해 교육의 질을 관리합니다.</p>
+    </div>
+
+    <div id="tab4" class="tab-content">
+        <h2>신기술 분야 8대 전공 특화 트랙</h2>
+        <p>산업체 수요를 기반으로 실무형 인재를 양성하기 위한 특화 트랙을 운영합니다.</p>
+        
+        <div class="card-grid">
+            <div class="card"><h4>클라우드</h4><p>지능 정보기술 분야 신규 일자리 대응</p></div>
+            <div class="card"><h4>융합보안</h4><p>블록체인 및 사이버 보안 전문가 양성</p></div>
+            <div class="card"><h4>지능형IoT</h4><p>유망 신산업 5대 분야 인력 양성</p></div>
+            <div class="card"><h4>생성AI</h4><p>자연어처리 및 멀티 도메인 모델 개발</p></div>
+            <div class="card"><h4>메타버스</h4><p>디지털 트윈 및 가상 환경 구축</p></div>
+            <div class="card"><h4>인공지능응용</h4><p>의료 및 전 산업 확산 대응</p></div>
+            <div class="card"><h4>의생명빅데이터</h4><p>보건·의료 데이터 분석 전문성 강화</p></div>
+            <div class="card"><h4>디자인테크</h4><p>XR, UI/UX 기술 융합 콘텐츠 기획</p></div>
+        </div>
+    </div>
+
+    <div id="tab5" class="tab-content">
+        <h2>전 계열로 확산되는 SW융합 교육</h2>
+        <p>인문, 사회, 예술, 공학 등 전 학문분야가 참여하는 14개 SW-X 융합트랙을 운영합니다.</p>
+        
+        <h3>주요 융합 트랙 (14개)</h3>
+        <p>소셜데이터사이언스, 심리데이터사이언스, 미디어데이터사이언스, 공공데이터분석, 정치데이터사이언스, 데이터사이언스와복지, 문헌정보데이터분석, DMS(행정관리과학), 바이오메디컬 디바이스&데이터, 산업AI, AI스포츠과학, 디지털패션, 도시·환경·생태 데이터분석, 디자인컴퓨팅</p>
+        
+        <h3>이수 체계</h3>
+        <ul>
+            <li><strong>융합연계전공:</strong> 42~48학점 (심화 과정)</li>
+            <li><strong>융합트랙:</strong> 21학점 (참여 학과 주도)</li>
+            <li><strong>마이크로디그리:</strong> 15학점 (단기 집중 과정)</li>
+        </ul>
+    </div>
+
+    <div id="tab6" class="tab-content">
+        <h2>전주기적 창업 확산 전략 (PSS+X)</h2>
+        <p>아이디어 발굴부터 투자 연계까지 창업의 전 과정을 지원합니다.</p>
+        
+        <table>
+            <tr>
+                <th>단계</th>
+                <th>주요 내용</th>
+            </tr>
+            <tr>
+                <td>1. 역량 배양</td>
+                <td>인공지능 기반 창업 교과 운영</td>
+            </tr>
+            <tr>
+                <td>2. 아이템 발굴</td>
+                <td>아이디어 경진대회 및 팀 빌딩 지원</td>
+            </tr>
+            <tr>
+                <td>3. 시제품 제작</td>
+                <td>해커톤 및 창업 공간(MVP 제작) 지원</td>
+            </tr>
+            <tr>
+                <td>4. 비즈니스 고도화</td>
+                <td>선배 창업자 1:1 멘토링, 린&애자일 특강</td>
+            </tr>
+        </table>
+        
+        <h3>지역 사회 가치 확산</h3>
+        <p>초·중·고교 AI선도학교 지원, 고교학점제 운영, 미취업자/정보소외계층을 위한 맞춤형 교육 프로그램을 제공합니다.</p>
+    </div>
+
+    <div id="tab7" class="tab-content">
+        <h2>2026학년도 SW학과 모집 현황</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>학과(전공)</th>
+                    <th>모집 정원</th>
+                    <th>비고</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>컴퓨터공학전공</td>
+                    <td>84명</td>
+                    <td>정보컴퓨터공학부</td>
+                </tr>
+                <tr>
+                    <td>인공지능전공</td>
+                    <td>60명</td>
+                    <td>경북대 공동학과 운영</td>
+                </tr>
+                <tr>
+                    <td>데이터사이언스전공</td>
+                    <td>44명</td>
+                    <td>의생명융합공학부</td>
+                </tr>
+                <tr>
+                    <td>디자인테크놀로지전공</td>
+                    <td>17명</td>
+                    <td>정보컴퓨터공학부</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>* 상세 전형 방법 및 입학 정보는 부산대학교 입학처 홈페이지를 참조하시기 바랍니다.</p>
+    </div>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].classList.remove("active");
+        }
+        tablinks = document.getElementsByClassName("tab-link");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+        
+        // 클릭 시 페이지 상단으로 부드럽게 이동 (선택사항)
+        // window.scrollTo({top: 200, behavior: 'smooth'});
+    }
+</script>
+
+</body>
+</html>
